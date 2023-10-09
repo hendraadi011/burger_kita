@@ -1,0 +1,198 @@
+:root {
+  --primary: #771823;
+  --bg : #f6edcf;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+   
+}
+
+@font-face {
+    font-family: august;
+    src: url('font/Hey\ August.ttf');
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--bg);
+    color: #fff;
+    height: 2000px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: start;
+    padding: 1.4rem 7%;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: rgba(1, 1, 0, 0.1);
+    color: var(--primary);
+    font-family: 'august', cursive;
+    margin-right: 1rem;
+}
+
+.navbar .navbar-nav a
+{
+    margin:0 0.7rem ;
+    display: inline-block;
+    font-size:1.3rem ;
+    font-weight: bold;
+    color: var(--primary);
+    text-shadow: 3px 1px 3px rgba(225, 219, 219, 0.48);
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a:after{
+    content: "";
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linier;
+}
+
+.navbar .navbar-nav a:hover::after{
+    transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a:hover{
+    color: var(--primary);
+} 
+
+.navbar .navbar-extra a{
+    color: orange;
+    margin: 0 0.5rem;
+}
+
+#hamburger-menu{
+    display: none;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url("img/bg1-01.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+.hero .content {
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.hero .content .gambar-1{
+    width: 35%;
+    margin-top: -10rem;
+    margin-left: 10rem;
+}
+
+.hero .content .gambar-2{
+    width: 50%;
+    height: 50%;
+   
+}
+
+
+.hero .content a{
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    padding: 1rem 1rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.19);
+    width: 15rem;
+    text-align: center;
+    transition: width 2s, height 4s;
+    margin:10px 200px;
+}
+
+.hero .content a:hover{
+    background-color: #450b12;
+}
+
+
+/* Media Queris */
+@media (max-width: 1366px)
+{
+    html{
+        font-size: 75%;
+    }
+}
+
+/* tablet */
+
+@media (max-width: 758px)
+{
+    html {
+        font-size: 62.5%;
+    }
+
+    #hamburger-menu{
+        display: inline-block;
+    }
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navbar .navbar-nav{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 30rem;
+        background-color: #c51605;
+        height: 100vh;
+        transition: 0.2s linear;
+    }
+
+    .navbar .navbar-nav.active{
+        right: 0;
+        background-color: blue;
+    }
+    .navbar .navbar-nav a {
+        color: black;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+      }
+
+    .hero .content .gambar-1{
+        width: 50%;
+        margin-top: -10rem;
+        margin-left: 10rem;
+    }
+    .hero .content .gambar-2{
+        width: 80%;
+        height: 50%;
+        margin-top: -10rem;
+    }
+
+}
